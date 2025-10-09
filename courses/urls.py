@@ -16,4 +16,6 @@ urlpatterns = [
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('admin/add-course/', views.add_course, name='add_course'),
     path('admin/<slug:course_slug>/add-module/', views.add_module, name='add_module'),
+    path('', views.index, name='index'),
+    path('about/', views.about_page, name='about'),
 ]

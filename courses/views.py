@@ -1,4 +1,4 @@
-
+from . import views
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course, Module, Enrollment, ReferralCode, Exam, Question, Submission, Certificate, Payment
 from django.contrib.auth import login
@@ -13,6 +13,10 @@ import requests
 def index(request):
     courses = Course.objects.all().order_by('-created_at')
     return render(request, 'courses/index.html', {'courses': courses})
+
+def about_page(request):
+    return render(request, 'pages/about.html')
+    return render(request, 'about.html')
 
 def course_detail(request, slug):
     course = get_object_or_404(Course, slug=slug)

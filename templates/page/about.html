@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us | LearnPlatform{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1 class="mb-4">Welcome to LearnPlatform</h1>
+            <p class="lead">
+                LearnPlatform is your go-to online learning platform for tech skills. 
+                From Python programming to web development, we provide high-quality courses to help you upskill and grow your career.
+            </p>
+            <p>
+                Our mission is to make tech education accessible to everyone. 
+                Join thousands of learners who are enhancing their skills every day.
+            </p>
+            <a href="{% url 'courses_list' %}" class="btn btn-primary mt-3">Browse Courses</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/learning_intro.svg' %}" class="img-fluid" alt="Learning illustration">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <h3>Expert Instructors</h3>
+            <p>Learn from industry professionals with years of experience.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h3>Flexible Learning</h3>
+            <p>Study at your own pace anytime, anywhere.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h3>Certifications</h3>
+            <p>Receive certificates to showcase your new skills to employers.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
