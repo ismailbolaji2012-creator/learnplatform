@@ -1,4 +1,8 @@
 Django>=4.2
+gunicorn
+dj-database-url
+psycopg2-binary
+whitenoise
 requests
-Pillow
 python-dotenv
+Pillow
