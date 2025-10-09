@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% block title %}{{ course.title }}{% endblock %}
+{% block content %}
+<h2>{{ course.title }}</h2>
+<p>{{ course.description }}</p>
+<p>Price: ₦{{ course.price }}</p>
+{% if enrolled %}
+  <p>You have access to this course.</p>
+  <h3>Modules</h3>
+  <ul>
+  {% for m in course.modules.all %}
+    <li>
+      <strong>{{ m.title }}</strong>
+      <p>{{ m.description }}</p>
+      {% if m.video_url %}<p><a href="{{ m.video_url }}" target="_blank">Watch video</a></p>{% endif %}
+      {% if m.note %}<div class="note">{{ m.note|linebreaks }}</div>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+  <a href="{% url 'courses:take_exam' course.id %}">Take Course Exam</a>
+{% else %}
+  <a href="{% url 'courses:initiate_payment' slug=course.slug %}" class="btn-primary">Buy & Unlock Course</a>
+  <p>Contact admin on WhatsApp: <a href="https://wa.me/{{ whatsapp }}">{{ whatsapp }}</a></p>
+{% endif %}
+{% endblock %}

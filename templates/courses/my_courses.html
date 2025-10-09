@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Courses</h2>
+<ul>
+{% for e in enrollments %}
+  <li>{{ e.course.title }} - Purchased at {{ e.purchased_at }} - <a href="{% url 'courses:course_detail' slug=e.course.slug %}">Open</a></li>
+{% empty %}
+  <li>No purchased courses yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

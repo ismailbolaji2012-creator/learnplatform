@@ -1,0 +1,9 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Total courses: {{ total_courses }}</p>
+<ul>
+{% for u in users %}<li>{{ u.username }} - active: {{ u.is_active }}</li>{% endfor %}
+</ul>
+{% endblock %}

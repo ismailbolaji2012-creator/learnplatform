@@ -1,0 +1,7 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Payment Successful</h2>
+<p>Your purchase of {{ payment.course.title }} was successful.</p>
+<a href="{% url 'courses:my_courses' %}">Go to My Courses</a>
+{% endblock %}

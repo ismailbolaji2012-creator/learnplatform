@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Master the Skills of Tomorrow</h1>
+    <p>Learn coding, AI, design, cybersecurity and more — all at your own pace.</p>
+    <a href="{% url 'courses:index' %}" class="btn-primary">Browse Courses</a>
+  </div>
+</section>
+<section class="course-list">
+  <h2>Available Courses</h2>
+  {% if courses %}
+  <div class="course-grid">
+    {% for c in courses %}
+      <div class="card">
+        <h3><a href="{% url 'courses:course_detail' slug=c.slug %}">{{ c.title }}</a></h3>
+        <p>{{ c.description|truncatechars:120 }}</p>
+        <p>Price: ₦{{ c.price }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p>No courses yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

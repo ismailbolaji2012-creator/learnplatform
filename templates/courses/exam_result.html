@@ -1,0 +1,7 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Exam Result</h2>
+<p>Score: {{ score }}%</p>
+{% if passed %}<p>Congratulations — you passed!</p>{% else %}<p>Try again later.</p>{% endif %}
+{% endblock %}

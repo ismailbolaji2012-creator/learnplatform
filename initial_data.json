@@ -1,0 +1,7 @@
+
+[
+  {"model":"courses.course","pk":1,"fields":{"title":"Intro to Python","slug":"intro-to-python","description":"Learn Python from scratch.","price":"5000.00","created_at":"2025-01-01T00:00:00Z"}},
+  {"model":"courses.module","pk":1,"fields":{"course":1,"title":"Getting Started","description":"Setup and basics","order":1,"video_url":"https://www.youtube.com/watch?v=rfscVS0vtbw"}},
+  {"model":"courses.exam","pk":1,"fields":{"course":1,"title":"Intro Exam","passing_score":50}},
+  {"model":"courses.question","pk":1,"fields":{"exam":1,"text":"What is Python?","option_a":"A snake","option_b":"A programming language","option_c":"A movie","option_d":"A car","correct":"B"}}
+]
